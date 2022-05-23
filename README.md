@@ -3,7 +3,7 @@
 
 Basic website for logging in your gym workouts
 
-``` app_website``` directory contains all the functionality aspect
+``` app_website``` directory contains all the functionality aspects
 * features include
    - create an account
    - log in
