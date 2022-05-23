@@ -1,0 +1,17 @@
+{% extends "learning_logs/base.html" %}
+{% block page_header %}
+
+  <div class="jumbotron">
+      {% if not request.user.is_authenticated %}
+        <h1 class="display-3">Track Your Progress</h1>
+
+        <p class="lead">Log Your Workout Now</p>
+        <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+           role="button">Register &roarr;</a>
+      {% else %}
+        <h1 class="display-3">Start Logging Your Reps!</h1>
+        <a class="btn btn-lg btn-primary" href="{% url 'learning_logs:topics' %}"
+           role="button">Log Now ! &roarr;</a>
+      {% endif %}
+  </div>
+{% endblock page_header %}

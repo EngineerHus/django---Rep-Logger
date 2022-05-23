@@ -1,0 +1,22 @@
+{% extends "learning_logs/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+<h4><b> Add a New Topic</b></h4>
+{% endblock page_header %}
+
+{% block content %}
+<ul>
+    {% for topic in topics %}
+     <li><h5><i><small>
+         <a href="{% url 'learning_logs:topic' topic.id %}" >{{ topic }}</a>
+     </small></i></h5></li>
+    {% empty %}
+    <li><h5>No topics have been added yet.</h5></li>
+    {% endfor %}
+</ul>
+<body>
+    <i><a class="btn btn-lg btn-primary" href="{% url 'learning_logs:new_topic' %}"
+           role="button" style="font-size:12px">Add a New Topic</i></a>
+</body>
+{% endblock content %}
